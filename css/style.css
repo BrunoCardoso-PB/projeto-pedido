@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.div-bg {
+    display: flex;
+    background: black;
+    color: white;
+    max-width: 1200px;
+    height: 300px;
+    margin: 0 auto;
+    justify-content: center;
+}
+.div-bg h1 {
+    display: inline-flex;
+    font-size: 5rem;    
+    align-items: center;    
+}
+.menu-lista {
+    display: flex;
+    background-color: rgb(238, 238, 238);
+    max-width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+    justify-content: center;
+}
+.menu-lista ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    align-items: center;
+    gap: 40px;
+    font-size: 1.5rem;
+}
+
+.info-geral {
+    height: 100px;
+}
+
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titulo {    
+    padding: 10px 20px;
+    border: 1px solid rgb(185, 181, 181);
+    width: 100%;
+}
+
+.imagem {
+    width: 120px;
+    height: 120px;
+ }
+ .imagem img{
+    object-fit:cover; 
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.lista-itens {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 5px;
+    height: 160px;
+    padding-top: 20px;
+    border: 1px solid rgb(185, 181, 181);
+    padding-left: 20px;
+    background: rgb(238, 238, 238);
+}
+.lista-itens p {
+    font-size: 1.5rem;
+    margin-top: 10px;    
+}
+
+.preco {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.preco-atual {
+    color: rgb(101, 163, 8);
+}
+
+.preco-antigo {
+    text-decoration: line-through;
+    font-size: 1rem;
+    padding-left: 10px;
+    color: rgb(161, 159, 159);
+}
+
+#combos{
+    margin-top: 5px;
+}
+
+#bebidas{
+    margin-top: 5px;
+}
+
+footer {
+    max-width: 1200px;
+    height: 200px;
+    background: bisque;
+}
