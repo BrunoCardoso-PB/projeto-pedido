@@ -7,8 +7,8 @@ a{
     text-decoration: none;
     color: black;
 }
-
-.div-bg {
+/***** Logo inicio *****/
+.logo {
     display: flex;
     background: black;
     color: white;
@@ -17,11 +17,14 @@ a{
     margin: 0 auto;
     justify-content: center;
 }
-.div-bg h1 {
+.logo h1 {
     display: inline-flex;
     font-size: 5rem;    
     align-items: center;    
 }
+/***** Logo Fim *****/
+
+/***** Menu inicio*****/
 .menu-lista {
     display: flex;
     background-color: rgb(238, 238, 238);
@@ -38,71 +41,125 @@ a{
     gap: 40px;
     font-size: 1.5rem;
 }
+.menu-lista a{
+    position: relative;
+}
+.menu-lista a:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0px;
+    margin-top: 4px;
+    transition: 0.3s;
+    position: absolute;
+    background: rgb(175, 145, 9);
+}
+.menu-lista a:hover::after {
+  width: 100%;
+}
+.menu-lista a:hover {
+    color: rgb(175, 145, 9);
+}
+/***** Menu Fim *****/
+
 
 .info-geral {
     height: 100px;
 }
 
+
 .main {
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .titulo {    
     padding: 10px 20px;
     border: 1px solid rgb(185, 181, 181);
     width: 100%;
+    background-color: black;
+    color: white;
 }
-
 .imagem {
     width: 120px;
     height: 120px;
  }
- .imagem img{
+.imagem img{
     object-fit:cover; 
     width: 100%;
     height: 100%;
     border-radius: 8px;
 }
-
 .lista-itens {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 5px;
+    
     height: 160px;
     padding-top: 20px;
-    border: 1px solid rgb(185, 181, 181);
+    border: 1px solid rgb(185, 184, 181);
     padding-left: 20px;
     background: rgb(238, 238, 238);
+}
+.lista-itens:hover{
+    background: rgb(245, 202, 12);
+    cursor: pointer;
 }
 .lista-itens p {
     font-size: 1.5rem;
     margin-top: 10px;    
 }
+@media (max-width: 950px) {
+    .lista-itens p {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 700px) {
+    .lista-itens img {
+        margin-left: 20px;
+    }
+    .lista-itens {
+        margin: 0 auto;
+        padding-left: 30px;
+    }
+    .lista-itens p {
+        font-size: 1rem;
+    }
+    .lista-itens h2 {
+        font-size: 1.3rem;
+    }
+    .hamburguer,
+    .combos {
+        height: 180px;
+    }
+}
+/*******************************/
 
-.preco {
+/****** preços início ******/
+.preco-container {
     font-size: 1.5rem;
     margin-top: 10px;
 }
-
 .preco-atual {
     color: rgb(101, 163, 8);
 }
-
 .preco-antigo {
     text-decoration: line-through;
     font-size: 1rem;
     padding-left: 10px;
     color: rgb(161, 159, 159);
 }
-
-#combos{
-    margin-top: 5px;
+@media (max-width: 950px) {
+    .preco-container{
+        margin-top: 5px;
+    }
+    .preco-atual {
+        font-size: 1.2rem; 
+    }
+    .preco-antigo {
+        font-size: 0.8rem;
+    }
 }
+/****** preços Fim ******/
 
-#bebidas{
-    margin-top: 5px;
-}
 
 footer {
     max-width: 1200px;
