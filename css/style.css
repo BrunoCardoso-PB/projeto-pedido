@@ -72,11 +72,13 @@ a{
 
 /***** Menu Fim *****/
 
-
 .info-geral {
     height: 100px;
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 20px;
+    color: red;
 }
-
 
 .main {
     max-width: 1200px;
@@ -88,6 +90,7 @@ a{
     width: 100%;
     background-color: black;
     color: white;
+    box-shadow: inset 0px -8px 20px -15px #FFFFFF;
 }
 .imagem {
     width: 120px;
@@ -101,8 +104,7 @@ a{
 }
 .lista-itens {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    
+    grid-template-columns: 1fr 1fr;    
     height: 160px;
     padding-top: 20px;
     border: 1px solid rgb(185, 184, 181);
@@ -110,8 +112,10 @@ a{
     background: rgb(238, 238, 238);
 }
 .lista-itens:hover{
-    background: rgb(245, 202, 12);
+    background: rgb(217, 144, 17);
     cursor: pointer;
+    box-shadow: 0px 1px 14px 2px #a4a4a4;
+    border: none;
 }
 .lista-itens p {
     font-size: 1.5rem;
@@ -149,13 +153,13 @@ a{
     margin-top: 10px;
 }
 .preco-atual {
-    color: rgb(101, 163, 8);
+    color: rgb(9, 138, 22);
 }
 .preco-antigo {
     text-decoration: line-through;
     font-size: 1rem;
     padding-left: 10px;
-    color: rgb(161, 159, 159);
+    color: rgb(174, 25, 25);
 }
 @media (max-width: 950px) {
     .preco-container{
