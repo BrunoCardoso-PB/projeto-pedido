@@ -1,16 +1,10 @@
-const listaItens = document.querySelectorAll('.lista-itens h2');
-
-
-
-function ativar(evento){
-    evento.preventDefault()
-    listaItens.forEach((item)=>{
-        item.classList.toggle('ativo')
-    })
+function iniciaModal(modalID){
+    const modal = document.getElementById(modalID)
+    modal.classList.add('mostrar')
 }
 
-listaItens.forEach((item,index)=>{
-    item.addEventListener('click', ativar)
+const logo = document.querySelector('.logo')
+logo.addEventListener('click', function(){
+    iniciaModal('modal-promocao')
 })
-
 
