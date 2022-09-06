@@ -1,36 +1,34 @@
-function inciaModal(e){
-    const modal = document.getElementById(e)
-    modal.classList.add('mostrar')
-    modal.addEventListener('click', function(e){
-        if(e.target.id == 'modal-promocao'){
-            modal.classList.remove('mostrar')
+function iniciaModal(e) {
+    const modal = document.getElementById(e);
+    modal.classList.add("mostrar");
+    modal.addEventListener("click", function (e) {
+        if (e.target.id == "modal-promocao") {
+            modal.classList.remove("mostrar");
         }
-    })
+    });
 }
 
 
-const hamburguer1 = document.querySelector('#hamburguer1')
-hamburguer1.addEventListener('click', function(){
-    inciaModal('modal-promocao')
-})
+const listaItens = document.querySelectorAll(".lista-itens");
+listaItens.forEach((item, index) => {
+    item.addEventListener("click", function (e) {
+        if (e.currentTarget.id == "hamburguer1") {
+            iniciaModal("modal-promocao");
+        }
+        if(e.currentTarget.id == "hamburguer2"){
+            console.log('clicou')
+        }
+    });
+});
 
 
 
 
+// const lanches = document.querySelectorAll('.lista-itens')
+// const arrayLanches = Array.from(lanches)
 
-
-
-// function iniciaModal(e){
-//     const modal = document.getElementById(e)
-//     modal.classList.add('mostrar')
-//     modal.addEventListener('click', (e) => {
-//         if(e.target.id == 'modal-promocao'){
-//             modal.classList.remove('mostrar')
-//         }
-//     })
-// }
-
-// const logo = document.querySelector('.logo')
-// logo.addEventListener('click', function(){
-//     iniciaModal('modal-promocao')
+// const objetosLanches = arrayLanches.map((lanche)=>{
+//     const titulo = lanche.querySelector('h2').innerText;
+//     const nomeLanche = titulo
+//     console.log(nomeLanche)
 // })
