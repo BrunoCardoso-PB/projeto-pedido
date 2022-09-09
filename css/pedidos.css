@@ -40,8 +40,8 @@
 }
 
 .img-container {
-    width: 500px;
-    height: 150px;
+    width: 250px;
+    height: 200px;
     margin: 0 auto;
 }
 .img-container img {
@@ -53,7 +53,8 @@
 
 .pedidos-itens {
     width: 500px;
-    margin: 0 auto;    
+    margin: 0 auto; 
+    padding-top: 20px;   
 }
 
 .pedidos-itens p{
