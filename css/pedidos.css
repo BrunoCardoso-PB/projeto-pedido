@@ -91,15 +91,24 @@
 
 @media (max-width: 700px){
     #modal{
-        min-width: 350px;
+        min-width: 300px;
+        padding: 20px;
     }
     .img-container{
-        width: 275px;
+        width: 150px;
+        height: 150px;
     }
     .input {
-        width: 275px;
+        width: 250px;
+        height: 60px;
     }
     .pedidos-itens {
-        width: 275px;
+        width: 250px;
+    }
+    .pedidos-itens h2{
+        font-size: 1.2rem;
+    }
+    .label {
+        width: 250px;
     }
 }

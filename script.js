@@ -52,6 +52,8 @@ function alteraModal() {
     });
   });
 }
+
+
 /*****************Alteração no modal para hamburguer 2*****************/
 function alteraModal2() {
   const produto = document.querySelectorAll("#produto2");
