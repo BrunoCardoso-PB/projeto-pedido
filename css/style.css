@@ -1,4 +1,9 @@
 @import "./pedidos.css";
+@import "./menu.css";
+@import "./logo.css";
+@import "./footer.css";
+@import "./lista-Itens.css";
+@import "./titulo-lista.css";
 
 *{
     margin: 0;
@@ -9,71 +14,6 @@ a{
     text-decoration: none;
     color: black;
 }
-/***** Logo inicio *****/
-.logo {
-    display: flex;
-    background: black;
-    color: white;
-    max-width: 1200px;
-    height: 300px;
-    margin: 0 auto;
-    justify-content: center;
-}
-.logo h1 {
-    display: inline-flex;
-    font-size: 5rem;    
-    align-items: center;    
-}
-/***** Logo Fim *****/
-
-/***** Menu inicio*****/
-.menu-lista {
-    display: flex;
-    background-color: rgb(238, 238, 238);
-    max-width: 1200px;
-    height: 60px;
-    margin: 0 auto;
-    justify-content: center;
-}
-.menu-lista ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    align-items: center;
-    gap: 40px;
-    font-size: 1.5rem;
-}
-.menu-lista a{
-    position: relative;
-}
-.menu-lista a:after {
-    content: "";
-    display: block;
-    height: 2px;
-    width: 0px;
-    margin-top: 4px;
-    transition: 0.3s;
-    position: absolute;
-    background: rgb(175, 145, 9);
-}
-.menu-lista a:hover::after {
-  width: 100%;
-}
-.menu-lista a:hover {
-    color: rgb(175, 145, 9);
-}
-
-@media (max-width: 700px) {
-    .menu-lista {
-        height: 80px;
-    }
-    .menu-lista ul{
-        font-size: 1rem;
-    }
-}
-
-/***** Menu Fim *****/
-
 .info-geral {
     height: 100px;
     font-size: 1.5rem;
@@ -86,100 +26,8 @@ a{
     max-width: 1200px;
     margin: 0 auto;
 }
-.titulo {    
-    padding: 10px 20px;
-    border: 1px solid rgb(185, 181, 181);
-    width: 100%;
-    background-color: black;
-    color: white;
-    box-shadow: inset 0px -8px 20px -15px #FFFFFF;
-}
-.imagem {
-    width: 120px;
-    height: 120px;
- }
-.imagem img{
-    object-fit:cover; 
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-}
-.lista-itens {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 10px;
-    padding-bottom: 10px;    
-    border: 1px solid rgb(185, 184, 181);
-    padding-left: 20px;
-    background: rgb(238, 238, 238);
-}
-.lista-itens:hover{
-    background: rgb(217, 144, 17);
-    cursor: pointer;
-    box-shadow: 0px 1px 14px 2px #a4a4a4;
-    border: none;
-}
-.lista-itens p {
-    font-size: 1.5rem;
-    margin-top: 10px;    
-}
-@media (max-width: 950px) {
-    .lista-itens p {
-        font-size: 1.2rem;
-    }
-}
-@media (max-width: 700px) {
-    .lista-itens img {
-        margin-left: 20px;
-    }
-    .lista-itens {
-        margin: 0 auto;
-        padding-left: 30px;
-    }
-    .lista-itens p {
-        font-size: 1rem;
-    }
-    .lista-itens h2 {
-        font-size: 1.3rem;
-    }
-    .combos {
-        height: 180px;
-    }
-}
-/*******************************/
-
-/****** preços início ******/
-.preco-container {
-    font-size: 1.5rem;
-    margin-top: 10px;
-}
-.preco-atual {
-    color: rgb(9, 138, 22);
-}
-.preco-antigo {
-    text-decoration: line-through;
-    font-size: 1rem;
-    padding-left: 10px;
-    color: rgb(174, 25, 25);
-}
-@media (max-width: 950px) {
-    .preco-container{
-        margin-top: 5px;
-    }
-    .preco-atual {
-        font-size: 1.2rem; 
-    }
-    .preco-antigo {
-        font-size: 0.8rem;
-    }
-}
-/****** preços Fim ******/
 
 
-footer {
-    max-width: 1200px;
-    height: 200px;
-    background: bisque;
-}
+
 
 

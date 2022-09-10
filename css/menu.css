@@ -1,0 +1,44 @@
+.menu-lista {
+    display: flex;
+    background-color: rgb(238, 238, 238);
+    max-width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+    justify-content: center;
+}
+.menu-lista ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    align-items: center;
+    gap: 40px;
+    font-size: 1.5rem;
+}
+.menu-lista a{
+    position: relative;
+}
+.menu-lista a:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0px;
+    margin-top: 4px;
+    transition: 0.3s;
+    position: absolute;
+    background: rgb(175, 145, 9);
+}
+.menu-lista a:hover::after {
+  width: 100%;
+}
+.menu-lista a:hover {
+    color: rgb(175, 145, 9);
+}
+
+@media (max-width: 700px) {
+    .menu-lista {
+        height: 80px;
+    }
+    .menu-lista ul{
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,14 @@
+.logo {
+    display: flex;
+    background: black;
+    color: white;
+    max-width: 1200px;
+    height: 300px;
+    margin: 0 auto;
+    justify-content: center;
+}
+.logo h1 {
+    display: inline-flex;
+    font-size: 5rem;    
+    align-items: center;    
+}

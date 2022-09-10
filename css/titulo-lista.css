@@ -1,0 +1,8 @@
+.titulo {    
+    padding: 10px 20px;
+    border: 1px solid rgb(185, 181, 181);
+    width: 100%;
+    background-color: black;
+    color: white;
+    box-shadow: inset 0px -8px 20px -15px #FFFFFF;
+}
