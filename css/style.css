@@ -4,6 +4,7 @@
 @import "./footer.css";
 @import "./lista-Itens.css";
 @import "./titulo-lista.css";
+@import "./modal.css";
 
 *{
     margin: 0;
