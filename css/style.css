@@ -106,9 +106,9 @@ a{
 }
 .lista-itens {
     display: grid;
-    grid-template-columns: 1fr 1fr;    
-    height: 160px;
-    padding-top: 20px;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 10px;
+    padding-bottom: 10px;    
     border: 1px solid rgb(185, 184, 181);
     padding-left: 20px;
     background: rgb(238, 238, 238);
@@ -142,7 +142,6 @@ a{
     .lista-itens h2 {
         font-size: 1.3rem;
     }
-    .hamburguer,
     .combos {
         height: 180px;
     }
