@@ -1,5 +1,4 @@
-/*********função que chama e remove o modal ao click ***********/
-
+/*************** função que chama e remove o modal ao click ***************/
 function iniciaModal(e) {
   const modal = document.getElementById(e);
   modal.classList.add("mostrar");
@@ -10,25 +9,18 @@ function iniciaModal(e) {
     }
   });
 }
-/*************aciona evento click no target *******************/
+/***************aciona o evento click no target - e chama as funções alteramodal e inicialmodal ***************/
 const listaItens = document.querySelectorAll(".lista-itens");
 listaItens.forEach((item, index) => {
   item.addEventListener("click", function (e) {
-    if (e.currentTarget.id == "produto1") {
-      alteraModal('#produto1');     
+    const listaItens = e.currentTarget.id
+    const idListaItens = `${'#'}${listaItens}`
+      alteraModal(idListaItens);    
       iniciaModal("modal-promocao");
-    }
-    if (e.currentTarget.id == "produto2") {
-      alteraModal('#produto2')        
-      iniciaModal("modal-promocao");
-    }
-    if (e.currentTarget.id == "produto3") {
-      alteraModal('#produto3');
-      iniciaModal("modal-promocao");
-    }
   });
 });
-/*****************Alteração no modal para hamburguer 1*****************/
+
+/***************funcao p/ alterações no modal ***************/
 function alteraModal(e) {
   const produto = document.querySelectorAll(e);
   const arrayProduto = Array.from(produto).map((item) => {
@@ -53,6 +45,7 @@ function alteraModal(e) {
     });
   });
 }
+/*************** função para limpar o modal ***************/
 function limpaModal(){
   const lanches = document.querySelectorAll(".modal-container");
     const arrayLanches = Array.from(lanches).map((lanche) => {
@@ -68,3 +61,24 @@ function limpaModal(){
       imgLimpo.src = ''
     })
 }
+
+/*************** menu mobile ***************/
+const btnMobile = document.getElementById('btn-mobile')
+
+function toggleMenu(evento) {
+  if (evento.type === 'touchstart') evento.preventDefault();
+  const nav = document.getElementById('nav')
+  nav.classList.toggle('active')
+  const active = nav.classList.contains('active') 
+  if(active){
+    evento.currentTarget.setAttribute('aria-label', 'Fechar Menu')
+    evento.currentTarget.setAttribute('aria-expanded', 'true')
+  } else {
+    evento.currentTarget.setAttribute('aria-label', 'Abrir Menu')
+    evento.currentTarget.setAttribute('aria-expanded', 'false')
+  }
+}
+btnMobile.addEventListener('click', toggleMenu)
+btnMobile.addEventListener('touchstart', toggleMenu)
+
+
