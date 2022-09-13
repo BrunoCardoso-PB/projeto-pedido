@@ -10,16 +10,19 @@ function iniciaModal(e) {
     }
   });
 }
-/***************aciona o evento click no target - e chama as funções alteramodal e inicialmodal ***************/
-const listaItens = document.querySelectorAll(".lista-itens");
-listaItens.forEach((item, index) => {
-  item.addEventListener("click", function (e) {
-    const listaItens = e.currentTarget.id
-    const idListaItens = `${'#'}${listaItens}`
-      alteraModal(idListaItens);    
-      iniciaModal("modal-promocao");
+/****aciona o evento click no target - e chama as funções alteramodal e inicialmodal *****/
+function initEventClick(){/***função isoladora***/
+  const listaItens = document.querySelectorAll(".lista-itens");
+  listaItens.forEach((item, index) => {
+    item.addEventListener("click", function (e) {
+      const listaItens = e.currentTarget.id
+      const idListaItens = `${'#'}${listaItens}`
+        alteraModal(idListaItens);    
+        iniciaModal("modal-promocao");
+    });
   });
-});
+}
+initEventClick()
 
 /***************funcao p/ alterações no modal ***************/
 function alteraModal(e) {
@@ -83,33 +86,54 @@ function toggleMenu(evento) {
 btnMobile.addEventListener('click', toggleMenu)
 btnMobile.addEventListener('touchstart', toggleMenu)
 
-/*************** fecha menu ao clicar nas opções ***************/
+/*************** funções fecha menu ao clicar nas opções ***************/
 
-function fechaMenu(){
-  const navMenu = document.getElementById('nav')
-  const jsMenu = document.getElementById('menu')
-  jsMenu.classList.add('js-menu')
-  navMenu.classList.remove('active')
-}
-const menuNav = document.querySelectorAll('#menu')
-menuNav.forEach((item, index)=>{
-  item.addEventListener('click',()=>{
-    fechaMenu()
-  })
-})
-
-function teste(){
-  const jsMenu = document.getElementById('menu')
-  jsMenu.classList.remove('js-menu')
-}
-
-const btnMenu = document.querySelectorAll('#btn-mobile')
-btnMenu.forEach((item, index)=>{
-  item.addEventListener('click',()=>{
-    teste()
-  })
-})
+function initOpenAndCloseMenu(){ /***função isoladora***/
+  function fechaMenu() {
+    const navMenu = document.getElementById("nav");
+    const jsMenu = document.getElementById("menu");
+    jsMenu.classList.add("js-menu");
+    navMenu.classList.remove("active");
+  }
+  const menuNav = document.querySelectorAll("#menu");
+  menuNav.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      fechaMenu();
+    });
+  });
   
+  function buttonRemoveJsMenu() {
+    const jsMenu = document.getElementById("menu");
+    jsMenu.classList.remove("js-menu");
+  }
+  const btnMenu = document.querySelectorAll("#btn-mobile");
+  btnMenu.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      buttonRemoveJsMenu();
+    });
+  });
+}
+initOpenAndCloseMenu()
+  
+/*************** Scroll suave no menu ***************/
+function initScrollSuave(){ /***função isoladora***/
+  const linksInternos = document.querySelectorAll('.menu-suave a[href^="#"]')
+  function ScrollToSection(event){
+    event.preventDefault()
+    const href = event.currentTarget.getAttribute('href')
+    const section = document.querySelector(href)
+    section.scrollIntoView ({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+  linksInternos.forEach((link)=>{
+    link.addEventListener('click', ScrollToSection)
+  })
+}
+initScrollSuave()
+
+
 
 
 
