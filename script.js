@@ -6,6 +6,7 @@ function iniciaModal(e) {
     if (e.target.id == "modal-promocao") {
       modal.classList.remove("mostrar"); 
       limpaModal() 
+
     }
   });
 }
@@ -67,6 +68,7 @@ const btnMobile = document.getElementById('btn-mobile')
 
 function toggleMenu(evento) {
   if (evento.type === 'touchstart') evento.preventDefault();
+  
   const nav = document.getElementById('nav')
   nav.classList.toggle('active')
   const active = nav.classList.contains('active') 
@@ -80,5 +82,35 @@ function toggleMenu(evento) {
 }
 btnMobile.addEventListener('click', toggleMenu)
 btnMobile.addEventListener('touchstart', toggleMenu)
+
+/*************** fecha menu ao clicar nas opções ***************/
+
+function fechaMenu(){
+  const navMenu = document.getElementById('nav')
+  const jsMenu = document.getElementById('menu')
+  jsMenu.classList.add('js-menu')
+  navMenu.classList.remove('active')
+}
+const menuNav = document.querySelectorAll('#menu')
+menuNav.forEach((item, index)=>{
+  item.addEventListener('click',()=>{
+    fechaMenu()
+  })
+})
+
+function teste(){
+  const jsMenu = document.getElementById('menu')
+  jsMenu.classList.remove('js-menu')
+}
+
+const btnMenu = document.querySelectorAll('#btn-mobile')
+btnMenu.forEach((item, index)=>{
+  item.addEventListener('click',()=>{
+    teste()
+  })
+})
+  
+
+
 
 

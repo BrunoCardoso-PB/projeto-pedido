@@ -47,8 +47,11 @@ a:hover {
         visibility: hidden;
         overflow-y: hidden;
     }
+    #menu.js-menu{
+        transition: 0s;
+    }
     #nav.active #menu {
-        height: calc(100vh - 70px);
+        height: 100vh;
         visibility: visible;
         overflow: auto;
     }
