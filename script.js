@@ -47,12 +47,8 @@ function alteraModal(e) {
 /*************** função para limpar o modal ***************/
 function limpaModal(){
   const lanches = document.querySelectorAll(".modal-container");
-    const arrayLanches = Array.from(lanches).map((lanche) => {
-      lanche.querySelector("h2").innerText = ''
-      lanche.querySelector("p").innerText =''
-      lanche.querySelector("span.preco-atual").innerText = ''
-      lanche.querySelector("span.preco-antigo").innerText = ''
-      lanche.querySelector('img').src = ''
+    const arrayLanches = Array.from(lanches).map((item) => {
+      item['h2','p','span.preco-atual','span.preco-antigo','img'] = ''
     })
 }
 
