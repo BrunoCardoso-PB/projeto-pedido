@@ -9,6 +9,7 @@
     left: 0px;
     background: rgba(0,0,0,.5);
     z-index: 2000;
+    
 }
 .modal-container.mostrar {
     display: block;
@@ -20,6 +21,7 @@
     min-width: 600px;
     margin: 0 auto;
     border-radius: 10px;
+    
 }
 
 @keyframes modal {
@@ -52,6 +54,7 @@
     width: 500px;
     margin: 0 auto; 
     padding-top: 20px;   
+    
 }
 
 .pedidos-itens p{

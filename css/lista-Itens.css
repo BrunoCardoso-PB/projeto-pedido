@@ -5,7 +5,6 @@
     padding-bottom: 10px;    
     border: 1px solid rgb(185, 184, 181);
     padding-left: 20px;
-    background: rgb(238, 238, 238);
 }
 .lista-itens:hover{
     background: rgb(217, 144, 17);

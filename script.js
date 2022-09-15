@@ -6,27 +6,27 @@ function iniciaModal(e) {
     if (e.target.id == "modal-promocao") {
       modal.classList.remove("mostrar"); 
       limpaModal() 
-
     }
   });
 }
 /****aciona o evento click no target - e chama as funções alteramodal e inicialmodal *****/
-function initEventClick(){/***função isoladora***/
+/***função isoladora***/
+function incialClick(){
   const listaItens = document.querySelectorAll(".lista-itens");
   listaItens.forEach((item, index) => {
     item.addEventListener("click", function (e) {
       const listaItens = e.currentTarget.id
-      const idListaItens = `${'#'}${listaItens}`
+      const idListaItens = `#${listaItens}`
         alteraModal(idListaItens);    
         iniciaModal("modal-promocao");
     });
   });
 }
-initEventClick()
-
+incialClick()
+ 
 /***************funcao p/ alterações no modal ***************/
 function alteraModal(e) {
-  const produto = document.querySelectorAll(e);
+  const produto = document.querySelectorAll(e);  
   const arrayProduto = Array.from(produto).map((item) => {
     const h2 = item.querySelector('h2').innerText;
     const p = item.querySelector("p").innerText;
@@ -36,16 +36,11 @@ function alteraModal(e) {
 
     const lanches = document.querySelectorAll(".modal-container");
     const arrayLanches = Array.from(lanches).map((lanche) => {
-      const titulo = lanche.querySelector("h2");
-      titulo.innerText = h2;
-      const descricao = lanche.querySelector("p");
-      descricao.innerText = p;
-      const preco1 = lanche.querySelector("span.preco-atual");
-      preco1.innerText = precoAtual;
-      const preco2 = lanche.querySelector("span.preco-antigo");
-      preco2.innerText = precoAntigo;
-      const imagemAlterada = lanche.querySelector('img')
-      imagemAlterada.src = imagem
+      lanche.querySelector("h2").innerText = h2;
+      lanche.querySelector("p").innerText = p;
+      lanche.querySelector("span.preco-atual").innerText = precoAtual;
+      lanche.querySelector("span.preco-antigo").innerText = precoAntigo;
+      lanche.querySelector('img').src = imagem
     });
   });
 }
@@ -53,16 +48,11 @@ function alteraModal(e) {
 function limpaModal(){
   const lanches = document.querySelectorAll(".modal-container");
     const arrayLanches = Array.from(lanches).map((lanche) => {
-      const h2Limpo = lanche.querySelector("h2")
-      h2Limpo.innerText = ''
-      const descricaoLimpo = lanche.querySelector("p")
-      descricaoLimpo.innerText =''
-      const preco1Limpo = lanche.querySelector("span.preco-atual")
-      preco1Limpo.innerText = ''
-      const preco2Limpo = lanche.querySelector("span.preco-antigo")
-      preco2Limpo.innerText = ''
-      const imgLimpo = lanche.querySelector('img')
-      imgLimpo.src = ''
+      lanche.querySelector("h2").innerText = ''
+      lanche.querySelector("p").innerText =''
+      lanche.querySelector("span.preco-atual").innerText = ''
+      lanche.querySelector("span.preco-antigo").innerText = ''
+      lanche.querySelector('img').src = ''
     })
 }
 
@@ -132,9 +122,5 @@ function initScrollSuave(){ /***função isoladora***/
   })
 }
 initScrollSuave()
-
-
-
-
 
 
