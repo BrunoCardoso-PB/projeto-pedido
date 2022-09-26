@@ -26,30 +26,26 @@ incialClick()
  
 /***************funcao p/ alterações no modal ***************/
 function alteraModal(e) {
-  const produto = document.querySelectorAll(e);  
-  const arrayProduto = Array.from(produto).map((item) => {
+  const produto = document.querySelector(e);
+  const item = produto.querySelector('.itens')  
+  console.log(item)
+  // Array.from(produto).map((item) => {
     const h2 = item.querySelector('h2').innerText;
     const p = item.querySelector("p").innerText;
     const precoAtual = item.querySelector("span.preco-atual").innerText;
     const precoAntigo = item.querySelector("span.preco-antigo").innerText;
-    const imagem = item.querySelector('img').src
-
-    const lanches = document.querySelectorAll(".modal-container");
-    const arrayLanches = Array.from(lanches).map((lanche) => {
-      lanche.querySelector("h2").innerText = h2;
+    const imagem = produto.querySelector('img').src
+    const lanche = document.querySelector(".modal-container");
+    lanche.querySelector("h2").innerText = h2
       lanche.querySelector("p").innerText = p;
       lanche.querySelector("span.preco-atual").innerText = precoAtual;
       lanche.querySelector("span.preco-antigo").innerText = precoAntigo;
       lanche.querySelector('img').src = imagem
-    });
-  });
 }
 /*************** função para limpar o modal ***************/
 function limpaModal(){
-  const lanches = document.querySelectorAll(".modal-container");
-    const arrayLanches = Array.from(lanches).map((item) => {
-      item['h2','p','span.preco-atual','span.preco-antigo','img'] = ''
-    })
+  const lanche = document.querySelector(".modal-container");
+  lanche['h2','p','span.preco-atual','span.preco-antigo','img'] = ''
 }
 
 /*************** menu mobile ***************/
@@ -117,6 +113,19 @@ function initScrollSuave(){ /***função isoladora***/
     link.addEventListener('click', ScrollToSection)
   })
 }
-initScrollSuave()
+/***********Horário aberto ou Fechado ***************/
+ 
+const funcionamento = document.querySelector('[data-semana]')
+const diasSemana = funcionamento.dataset.semana.split(',').map(Number);
+const horarioSemana = funcionamento.dataset.horario.split(',').map(Number);
 
+const dataAgora = new Date()
+const diaAgora = dataAgora.getDay()
+const horarioAgora = dataAgora.getHours()
 
+const semanaAberto = diasSemana.indexOf(diaAgora) !== -1
+const horarioAberto = (horarioAgora >= horarioSemana[0] && horarioAgora < horarioSemana[1])
+
+if(semanaAberto && horarioAberto){
+  funcionamento.classList.add('aberto')
+}
